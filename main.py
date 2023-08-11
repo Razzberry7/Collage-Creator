@@ -22,7 +22,7 @@ img_dimension_w, img_dimension_h = ["100", "100"]
 grid_dimension_w, grid_dimension_h = ["1", "1"]
 grid_mode = "TILED"
 settings_bools = [False, False, False]
-grid_name = "default.png"
+grid_name = "/Results/default.png"
 img_dimensions = [100, 100]
 rows, columns = 1, 1
 Map = [[0]]
@@ -50,7 +50,7 @@ def get_inputs():
     settings_bools = [settings_allow_dark_var.get(), settings_allow_light_var.get(), settings_allow_other_var.get()]
     # print(settings_bools)
 
-    grid_name = filename_entry.get() + ".png"
+    grid_name = "/Results/" + filename_entry.get() + ".png"
     # print(grid_name)
 
 def create_variables():
@@ -169,10 +169,6 @@ filename_frame.place(relx=0.5, rely=0.7, anchor=tk.CENTER) # Center the frame
 button = tk.Button(root, text="< Generate Grid >",
                    command=lambda: [get_inputs(), create_variables(), generate_random_map(), create_image()])
 button.place(relx=0.5, rely=0.9, anchor=tk.CENTER)
-
-
-
-
 
 
 # Creates a new dir to store hashed version of the original images.
